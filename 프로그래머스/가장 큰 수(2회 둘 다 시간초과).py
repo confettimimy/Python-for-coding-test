@@ -26,3 +26,23 @@ def solution(numbers):
     s_list.sort(reverse=True) #큰 수 순으로 정렬
 
     return s_list[0]
+
+# ----------------------------------------------------------------------------------
+
+from itertools import permutations 
+
+def solution(numbers):
+    
+    case = list(permutations(numbers, len(numbers))) #순열 - 일렬로 나열
+    #print(case)
+    c=[]
+    for tuple in case:
+        m = list(map(str, tuple))
+        ss=''
+        for h in range(len(m)):
+            ss += m[h]
+        c.append(ss)
+                                  
+    #print(c)
+    
+    return str(max(list(map(int, c))))
