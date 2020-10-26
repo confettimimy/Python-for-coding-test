@@ -7,4 +7,9 @@ result = list( permutations(data, 3) ) # 모든 순열 구하기
 
 print(result)
 
-'''출력 결과: [('A', 'B', 'C'), ('A', 'C', 'B'), ('B', 'A', 'C'), ('B', 'C', 'A'), ('C', 'A', 'B'), ('C', 'B', 'A')]
+'''출력 결과: [('A', 'B', 'C'), ('A', 'C', 'B'), ('B', 'A', 'C'), ('B', 'C', 'A'), ('C', 'A', 'B'), ('C', 'B', 'A')]'''
+
+data2 = [1, 2, 3]
+
+for x in permutations(data2, 2):
+    print(list(x))
