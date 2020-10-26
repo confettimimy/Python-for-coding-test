@@ -16,7 +16,7 @@ def solution(a, b):
             
     return answer
 
-# --------------------------
+# ------------------------------------------------
 # by JAVA
 
 class Solution {
@@ -36,3 +36,15 @@ class Solution {
       return total;
   }
 }
+
+# ------------------------------------------------
+# Python re
+
+def adder(a, b):
+    
+    if a > b: 
+        a, b = b, a # C나 Java에서는 저장해둘 변수 tmp가 필요했지만 파이썬에서는 전혀 필요X
+
+    return sum(range(a,b+1))
+
+print( adder(3, 5))
