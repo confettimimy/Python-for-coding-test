@@ -16,3 +16,9 @@ def solution(phone_number):
 
         
     return phone_number
+
+# ---------------------------------------------------------------------------------------------
+
+'''최적의 코드'''
+def hide_numbers(s):
+    return "*"*(len(s)-4) + s[-4:]
