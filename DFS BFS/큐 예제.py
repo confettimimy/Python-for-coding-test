@@ -16,3 +16,5 @@ queue.popleft()
 print(queue) # 먼저 들어온 순서대로 출력
 queue.reverse() # 다음 출력을 위해 역순으로 바꾸기
 print(queue) # 나중에 들어온 원소부터 출력
+
+# + deque객체를 리스트 자료형으로 변경하고자 한다면 list(queue)를 하면 리스트 자료형이 된다.
