@@ -1,5 +1,6 @@
 ''' • DFS 구현 시 스택 자료구조를 이용
     • BFS 구현 시 큐 자료구조를 이용 '''
+# DFS의 경우 최대한 멀리 있는 노드를 우선으로 탐색하는 방식으로 동작하지만, BFS는 그 반대이다.
 from collections import deque
 
 
