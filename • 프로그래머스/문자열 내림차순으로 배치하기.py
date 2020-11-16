@@ -15,7 +15,7 @@ def solution(s):
     s_list.extend(upper)
     # 현재는 리스트 형태 -> 문자열 형태로 바꾸기
     result=''
-    result = ''.join(s_list)
+    result = ''.join(s_list) #"".join(리스트) 혹은 "특정문자열".join(리스트) 형태
     # print(result) # 확인
     
     return result
