@@ -30,14 +30,18 @@ for _ in range(m):
     x, y = map(int, input().split())
     graph[x].append(y)
     graph[y].append(x)
+# print(graph)
+# 정렬 전 graph의 모습: [[], [2, 3], [5, 1], [4, 1], [5, 3], [4, 2]]
 
 
 for i in graph: ###
     i.sort()
 # 문제2) 방문할 수 있는 정점이 여러 개일 때 정점 번호가 작은 것을 먼저 방문한다는 것을 놓치고 제출했다가 틀렸었다.
 # [문제조건] '단, 방문할 수 있는 정점이 여러 개인 경우에는 정점 번호가 작은 것을 먼저 방문'
+# print(graph)
+# 정렬 후 graph의 모습: [[], [2, 3], [1, 5], [1, 4], [3, 5], [2, 4]]
  
- 
+
 visited = [False] * (n+1)
 dfs(v)
 print()
