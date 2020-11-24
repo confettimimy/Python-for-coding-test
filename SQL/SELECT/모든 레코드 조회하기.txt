@@ -1,0 +1,3 @@
+SELECT * FROM ANIMAL_INS ORDER BY ANIMAL_ID;
+
+# id를 기준으로 테이블에서 모든 칼럼(*) 가지고 오기
