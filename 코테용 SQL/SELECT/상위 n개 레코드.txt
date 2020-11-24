@@ -1,0 +1,5 @@
+• 동물 보호소에 가장 먼저 들어온 동물의 이름을 조회하는 SQL 문을 작성해주세요.
+
+SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME LIMIT 1;
+
+# LIMIT은 다 정리되고 정렬된 테이블에서 상위 몇개만 가지고 오는 조건문.
