@@ -1,3 +1,5 @@
+# <1920번 수 찾기> 문제와 거의 똑같은 문제 (수열의 개수만 다를 뿐)
+
 def binary_search(array, target, start, end):
     while start <= end:
         mid = (start+end) // 2
