@@ -1,0 +1,7 @@
+• 동물 보호소에 동물이 몇 마리 들어왔는지 조회하는 SQL 문을 작성해주세요.
+
+SELECT COUNT(*) FROM ANIMAL_INS;
+
+# 조회: SELECT를 활용 / 수량 세기: COUNT를 활용
+# COUNT(*) 으로 존재하는 모든 행을 가져온다.
+# 만약 * 대신 COUNT(NAME)으로 쓴다면, NAME 칼럼에 NULL이 들어있지 않은 행 갯수를 가져오게 될 것 -> 여기서 틀림.
