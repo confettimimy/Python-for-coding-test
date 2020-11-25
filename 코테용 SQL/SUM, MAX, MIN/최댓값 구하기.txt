@@ -1,0 +1,9 @@
+• 가장 최근에 들어온 동물은 언제 들어왔는지 조회하는 SQL 문을 작성해주세요.
+(SQL문을 실행하면 다음과 같이 나와야 합니다.
+시간
+2013-11-18 17:03:00)
+
+SELECT MAX(DATETIME) FROM ANIMAL_INS;
+
+# SELECT DATETIME FROM ANIMAL_INS ORDER BY DATETIME DESC LIMIT 1;
+# 이렇게 해도 되지만, 그 값을 가진 row 전체가 아닌 그 값을 원하는 것이기 때문에 집계함수 max를 써주면 코드가 더 효율적.
