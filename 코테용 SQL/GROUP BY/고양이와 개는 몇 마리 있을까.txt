@@ -1,0 +1,25 @@
+• 고양이는 2마리, 개는 1마리 들어왔습니다. 따라서 SQL문을 실행하면 다음과 같이 나와야 합니다.
+ANIMAL_TYPE	count
+Cat	        2
+Dog	        1
+
+SELECT ANIMAL_TYPE, COUNT(ANIMAL_TYPE)
+FROM ANIMAL_INS
+GROUP BY ANIMAL_TYPE
+ORDER BY ANIMAL_TYPE
+
+# <as count> 칼럼명을 count로 해준다는 뜻. (ex) SELECT COUNT(*) as count FROM ANIMAL_INS;
+
+
+
+
+
+
+
+
+
+
+
+# ANIMAL_TYPE 별 개수를 count 해야 하므로 ANIMAL_TYPE 별로 group by 시킨 뒤, ANIMAL_TYPE 순으로 정렬한다.
+# GROUP BY 그룹으로 묶을 칼럼 값
+# -> ANIMAL_TYPE이 같은 것끼리 묶어 COUNT로 개수를 센다.
