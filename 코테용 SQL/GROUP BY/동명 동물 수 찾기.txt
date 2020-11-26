@@ -1,0 +1,13 @@
+• 동물 보호소에 들어온 동물 이름 중 두 번 이상 쓰인 이름과 해당 이름이 쓰인 횟수를 조회하는 SQL문을 작성해주세요. 이때 결과는 이름이 없는 동물은 집계에서 제외하며, 결과는 이름 순으로 조회해주세요.
+(SQL문을 실행하면 다음과 같이 나와야 합니다.)
+NAME	COUNT
+Lucy	3
+Raven	2
+
+SELECT NAME, COUNT(*) AS COUNT
+FROM ANIMAL_INS
+GROUP BY NAME HAVING COUNT(NAME)>1
+ORDER BY NAME;
+
+# 위의 HAVING절에서 COUNT(*)라고 쓸 시, NULL값의 행도 포함하기 때문에 문제조건의 '이름이 없는 동물은 집계에서 제외한다'에 어긋나 틀리게 된다.
+# [HAVING 절] 'GROUP BY 절에 의해 생성된 결과 값' 중 원하는 조건에 부합하는 자료만 보고자 할 때 사용한다.
