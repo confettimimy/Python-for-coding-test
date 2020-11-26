@@ -1,25 +1,12 @@
-• 고양이는 2마리, 개는 1마리 들어왔습니다. 따라서 SQL문을 실행하면 다음과 같이 나와야 합니다.
+• 동물 보호소에 들어온 동물 중 고양이와 개가 각각 몇 마리인지 조회하는 SQL문을 작성해주세요. 이때 고양이를 개보다 먼저 조회해주세요.
+(고양이는 2마리, 개는 1마리 들어왔습니다. 따라서 SQL문을 실행하면 다음과 같이 나와야 합니다.)
 ANIMAL_TYPE	count
 Cat	        2
 Dog	        1
 
-SELECT ANIMAL_TYPE, COUNT(ANIMAL_TYPE)
-FROM ANIMAL_INS
-GROUP BY ANIMAL_TYPE
-ORDER BY ANIMAL_TYPE
+SELECT ANIMAL_TYPE, COUNT(*) AS count # 나타나게 할 정보: ANIMAL_TYPE, count
+FROM ANIMAL_INS # TABLE 선택
+GROUP BY ANIMAL_TYPE # 그룹으로 묶을 칼럼 선택
+ORDER BY ANIMAL_TYPE # 정렬 기준으로 사용할 칼럼 선택
 
 # <as count> 칼럼명을 count로 해준다는 뜻. (ex) SELECT COUNT(*) as count FROM ANIMAL_INS;
-
-
-
-
-
-
-
-
-
-
-
-# ANIMAL_TYPE 별 개수를 count 해야 하므로 ANIMAL_TYPE 별로 group by 시킨 뒤, ANIMAL_TYPE 순으로 정렬한다.
-# GROUP BY 그룹으로 묶을 칼럼 값
-# -> ANIMAL_TYPE이 같은 것끼리 묶어 COUNT로 개수를 센다.
