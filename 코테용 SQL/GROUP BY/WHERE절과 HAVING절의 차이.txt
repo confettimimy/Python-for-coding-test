@@ -1,0 +1,20 @@
+WHERE, HAVING절 둘 다 비슷한 성격의 '조건절'
+
+
+* WHERE
+  select * from 테이블명 where 조건절
+  - 항상 from뒤에 위치하고 조건에는 다양한 비교연산자들이 사용되어 구체적인 조건을 줄 수 있다.
+
+
+* HAVING
+  select * from 테이블명 group by 필드명 having 조건절
+  - 항상 group by뒤에 위치하고 where 조건절과 마찬가지로 조건에는 다양한 비교연산자들이 사용되어 구체적인 조건을 줄 수 있다.
+
+
+[둘의 차이]
+1) mysql> select name, count(*) as cnt from where name='홍길동' 테이블 group by name;
+2) mysql> select name, count(*) as cnt from 테이블 group by name;
+
+1)의 경우는 where 조건절에 맞는 정보를 우선적으로 들고와서 group by로 그룹화 하고
+2)의 경우는 group by로 그룹화 한 상태에서 having 조건절에 맞는 정보를 들고옵니다.
+
