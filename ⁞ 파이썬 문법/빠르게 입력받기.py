@@ -8,7 +8,14 @@
 '''한 줄 입력받아 출력하는 소스코드'''
 import sys
 
-#하나의 문자열 데이터 입력받기
+# 하나의 문자열 데이터 입력받기
 input_data = sys.stdin.readline().rstrip()
 
 print(input_data)
+
+
+
+ # [+] 빠르게 입력받기 위해 아래와 같이 input()을 sys.stdin.readline()으로 대체해 사용
+n, m = map(int, sys.stdin.readline().split())
+
+print(n,m)
