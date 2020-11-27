@@ -10,3 +10,11 @@ def solution(n):
 
     return int(''.join(s_list))
 
+
+# [더 효율적인 방식]
+
+def solution(n):
+    ls = list(str(n))
+    ls.sort(reverse = True)
+    return int("".join(ls))
+
