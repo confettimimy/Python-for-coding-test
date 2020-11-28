@@ -15,7 +15,7 @@ def dfs(x, y):
         # (1) 이동한 위치가 맵을 벗어나지 않는 유효한 범위인지 확인
         # (2) 이동한 위치가 한번도 방문된 적 없는 곳인지 확인
         # (3) 이동한 위치가 이동가능한 곳인지 확인
-        if (0 <= nx < w and 0 <= ny < h) and (visited[nx][ny] == False) and (maps[nx][ny] == 1):
+        if 0 <= nx < h and 0 <= ny < w and visited[nx][ny] == False and maps[nx][ny] == 1:
             dfs(nx, ny)
 
 
@@ -26,9 +26,8 @@ while True:
         break
 
     # 2x2행렬의 인접행렬 방식
-    maps = []
-    for _ in range(h):
-        maps.append(list(map(int, sys.stdin.readline().split())))
+    maps = [list(map(int,input().split())) for _ in range(h)]
+    print(maps)
 
     # 방문처리용
     visited = [[False]*w for _ in range(h)]
