@@ -1,0 +1,19 @@
+• 아직 입양을 못 간 동물 중, 가장 오래 보호소에 있었던 동물 3마리의 이름과 보호 시작일을 조회하는 SQL문을 작성해주세요. 이때 결과는 보호 시작일 순으로 조회해야 합니다.
+* 문제에 주어진 테이블: ANIMAL_INS, ANIMAL_OUTS
+(SQL문을 실행하면 다음과 같이 나와야 합니다.)
+NAME	DATETIME
+Shelly	2015-01-29 15:01:00
+Jackie	2016-01-03 16:25:00
+Benji	2016-04-19 13:28:00
+
+
+SELECT ANIMAL_INS.NAME, ANIMAL_INS.DATETIME
+
+FROM ANIMAL_INS LEFT JOIN ANIMAL_OUTS
+ON ANIMAL_INS.ANIMAL_ID = ANIMAL_OUTS.ANIMAL_ID
+WHERE ANIMAL_OUTS.ANIMAL_ID IS NULL
+
+ORDER BY ANIMAL_INS.DATETIME LIMIT 3;
+
+
+# '아직 입양을 못 간 동물 중' = 보호소에는 있는데 입양 OUT테이블에는 없는 동물
