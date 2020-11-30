@@ -1,0 +1,17 @@
+• ANIMAL_INS 테이블에 등록된 모든 레코드에 대해, 각 동물의 아이디와 이름, 들어온 날짜1를 조회하는 SQL문을 작성해주세요. 이때 결과는 아이디 순으로 조회해야 합니다.
+[1] 시각(시-분-초)을 제외한 날짜(년-월-일)만 보여주세요.
+(SQL문을 실행하면 다음과 같이 나와야 합니다.)
+ANIMAL_ID	NAME	날짜
+A349996 	Sugar	2018-01-22
+A350276 	Jewel	2017-08-13
+A350375 	Meo	2017-03-06
+A352555 	Harley	2014-08-08
+A352713 	Gia	2017-04-13
+
+SELECT ANIMAL_ID, NAME, DATE_FORMAT(DATETIME, '%Y-%m-%d') AS 날짜
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID
+
+# DATE_FORMAT을 이용해 원하는 데이트포맷을 출력시킨다.
+# '%Y-%m-%d' 여기서 y, m, d 대소문자의 차이는 출력 결과도 변화시킨다.(주의)
+
