@@ -1,5 +1,6 @@
-s = input()
+''''''
 
+s = input()
 
 for i in range(26): # 소문자 알파벳은 총 26개
     #print(chr(i+97),'확인용')

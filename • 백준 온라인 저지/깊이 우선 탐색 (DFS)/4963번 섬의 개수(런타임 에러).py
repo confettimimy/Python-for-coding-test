@@ -18,7 +18,7 @@ def dfs(x, y):
         # (3) 이동한 위치가 이동가능한 곳인지 확인
 
         # 공간을 벗어난 경우 무시
-        if nx < 0 or ny < 0 or nx >= w or ny >= h:
+        if nx < 0 or ny < 0 or nx >= h or ny >= w:
             continue
         # 땅(섬)이 아닌 경우 무시
         if maps[nx][ny] == 0: ###여기서 걸림..
