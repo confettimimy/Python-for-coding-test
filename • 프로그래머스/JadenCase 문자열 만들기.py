@@ -1,3 +1,4 @@
+# 첫 번째 나의 풀이 -> 정확성 43.8
 def solution(s):
     ls = s.split()
     
@@ -12,3 +13,11 @@ def solution(s):
         answer += (data + " ")
         
     return answer.rstrip()
+
+
+
+
+# 두 번째 다른 사람의 풀이 -> 테스트케이스 16만 미통과 상태
+def solution(s):        
+    return s.lower().title()
+ 
