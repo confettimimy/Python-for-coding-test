@@ -14,3 +14,8 @@ def fibo(x):
     return d[x]
 
 print(fibo(99))
+
+'''<호출되는 함수 확인>
+fibo(6)을 했을 경우,
+f(6) f(5) f(4) f(3) f(2) f(1) f(2) f(3) f(4)
+'''
