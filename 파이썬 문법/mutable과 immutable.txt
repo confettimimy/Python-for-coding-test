@@ -1,0 +1,6 @@
+   
+• Immutable 변경 불가능한 자료형 : 숫자(number), 문자열(string), 튜플(tuple)
+
+• Mutable : 리스트(list), 딕셔너리(dictionary), NumPy의 배열(ndarray)
+   
+
