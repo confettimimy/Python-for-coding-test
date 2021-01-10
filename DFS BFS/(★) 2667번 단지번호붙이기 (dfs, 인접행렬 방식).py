@@ -9,8 +9,8 @@ ls = [] # 각 단지에 속하는 집의 수
 home_cnt = 0 #####
 
 def dfs(x, y): # (x, y)는 시작 위치 인덱스
-    visited[x][y] = True # 현재 인덱스 방문처리 해버리고 
-    global home_cnt ##### 아마 파이썬에서는 전역변수 값 수정이 불가한데 수정 시 global을 써주면 되는 것으로 알고있다.
+    visited[x][y] = True 
+    global home_cnt ##### 
     home_cnt += 1
 
     # 인접한 노드 탐색하면서 연결되어 있으면 dfs 재귀호출
@@ -42,7 +42,6 @@ for i in range(n):
             home_cnt = 0 #####
             dfs(i, j)
             ls.append(home_cnt)
-            # cnt개수가 원래 0이였다가 dfs함수 호출 후 값이 집개수(한 단지 당)로 세팅돼 있을거임.
 
 
 
