@@ -22,3 +22,6 @@ def solution(n):
     
     return count
 
+'''참고로 break문은 반복문 단 하나를 빠져나올 때 쓰는 것!
+   이중반복문 탈출이 아님.'''
+
