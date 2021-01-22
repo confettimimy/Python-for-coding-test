@@ -14,7 +14,8 @@ def solution(board, moves):
         
         for i in range(len(board)):
             if board[i][pick_location-1] != 0: # 세로줄 기준으로 해야함!
-                stack.append(board[i][0])
+                stack.append(board[i][0]) #어디가 문제인지 확인용
+                print(board[i][pick_location-1])
                 board[i][0] = 0 # 뽑힌 인형 자리는 0으로 처리해줘야함. 이 부분을 miss
                 # 방금 넣은 값이 이전 값과 같다면
                 if len(stack) >=2 and stack[-2] == stack[-1]:
@@ -25,3 +26,8 @@ def solution(board, moves):
     
 
     return lose_doll_count
+
+
+
+
+print( solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]], [1,5,3,5,1,2,1,4]) )
