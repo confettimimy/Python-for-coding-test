@@ -13,8 +13,8 @@ def solution(n, words):
                 stack.append(word)
             else:
                 fail = False
+                print(stack)
                 
-    print(stack)
     if (len(stack)+1) % n == 0:
         who = n
     else:
@@ -23,3 +23,6 @@ def solution(n, words):
     
     return [who, (len(stack)+1)//n]
         
+
+print( solution(3, [["tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"]]) )
+
