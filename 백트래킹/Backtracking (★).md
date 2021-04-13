@@ -2,6 +2,8 @@
 
 **DFS 혹은 조합(Combinations)을 활용한 문제풀이**
 
+1차면접 코테 리뷰를 위해 dfs를 이용한 풀이도 진행해본다.
+
 ​    
 
 **[백트래킹 대표 문제](https://www.acmicpc.net/problem/1759)**
