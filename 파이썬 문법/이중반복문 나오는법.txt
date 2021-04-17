@@ -1,0 +1,4 @@
+break문은 반복문 단 하나를 빠져나올때 쓰는 것
+
+이중반복문 나오는법 1
+https://redmuffler.tistory.com/446
