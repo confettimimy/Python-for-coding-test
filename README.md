@@ -8,3 +8,5 @@
 
 [리스트 복사 - 깊은복사, 얕은복사](https://hcr3066.tistory.com/74)
 
+[거꾸로 s.reverse() / reversed(s) / s[::-1] ](https://itholic.github.io/python-reverse-string/)
+
