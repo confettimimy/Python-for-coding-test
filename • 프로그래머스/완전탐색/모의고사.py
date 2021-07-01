@@ -1,4 +1,5 @@
 def solution(answers):
+    #print(len(answers))
     counts = [0, 0, 0]
     
     ls1 = [1, 2, 3, 4, 5]
@@ -8,19 +9,23 @@ def solution(answers):
     for i in range(0, len(answers)):
         if answers[i] == ls1[i%5]:
             counts[0] += 1
-        if answers[i] == ls1[i%8]:
+        if answers[i] == ls2[i%8]:
             counts[1] += 1
-        if answers[i] == ls1[i%10]:
+        if answers[i] == ls3[i%10]: #모두 ls1로해서 틀렸었음 
             counts[2] += 1
-    print(counts,'z') #여기서 일단 무언가가 잘못됨..
+    
     
     final = [[1], [2], [3]]
     for k in range(3):
-        final[k].append( counts[k] )
-    
+        final[k].append(counts[k])
+        
     final.sort(key=lambda x: x[1], reverse = True)
     
-    print(final)
-    print(final[0][0])
+    answer = []
+    answer.append(final[0][0])
+    for b in range(1,3):
+        if final[0][1] == final[b][1]:
+            answer.append(final[b][0])  
+    return answer
 
-    # 딕셔너리 자료형은 리스트와 다르게 sort() 어트리부트를 갖고있지 않는다
+# 미해결 -> 해결완료!
