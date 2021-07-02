@@ -1,0 +1,1 @@
+Left Outer Join / Right Outer Join
