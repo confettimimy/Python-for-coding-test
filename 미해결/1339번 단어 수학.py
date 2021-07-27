@@ -1,8 +1,54 @@
-'''반례가 존재한다. 다른 방식으로 풀어보자. . .'''
+# permutations을 이용해 백트래킹 방식으로 모든 경우의 수를 시도해 max값 찾는 방식
+# --> 백트래킹 방식은 시간초과가 났다. 시간을 줄여보도록 해보자(  )
+from itertools import permutations
 
 n = int(input())
 words = []
+for _ in range(n):
+    words.append( input() )
+#print(words)
+
 sett = set()
+for word in words:
+    for c in word:
+        sett.add(c)
+#print(sett)
+
+num = []
+k=9
+cnt=0
+while 1:
+    if cnt == len(list(sett)):
+        break
+    cnt+=1
+    num.append(k)
+    k-=1
+#print(num)
+dic = dict()
+possible = set()
+for case in list(permutations(sett ,len(sett))):
+    #print(case)
+    for j in range(len(num)):
+        dic[case[j]] = num[j]
+
+    #이제 알파벳과 숫자를 상응시켜 더하기
+    l=[]
+    for word in words:
+        w = ''
+        for c in word:
+            w += str(dic[c])
+        l.append(int(w))
+    possible.add( sum(l) )
+
+print(max(list(possible)))
+
+
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+# 아래 방식으로 풀었더니 반례가 존재한다. 다른 방식으로 풀어보려한다. (위코드)
+'''
+n = int(input())
+words = []
 for _ in range(n):
     words.append( input() )
 #print(words)
@@ -47,3 +93,4 @@ for word in words: # 'GCF' / 'ACDEB'
     l.append(int(w))
 #print(l)
 print(sum(l))
+'''
