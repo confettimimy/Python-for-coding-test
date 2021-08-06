@@ -51,7 +51,7 @@ r, c, k = map(int, input().split())
 A = []
 for _ in range(3):
     A.append(list(map(int, input().split())))
-print(A, '처음 A배열 원본모습')
+#print(A, '처음 A배열 원본모습')
 
 
 
@@ -61,7 +61,7 @@ minute = 0
 # 3. 다음에 적용되는 연산은 행의 개수 < 열의 개수이기 때문에 C 연산이다.
 first = False
 while True:
-    if A[r][c] == k:
+    if 0<=r < len(A) and 0<=c < len(A[0]) and A[r][c] == k:
         break
     if minute > 100:
         break
@@ -69,7 +69,7 @@ while True:
     if first == False: # 가장 처음에는 행의 개수 ≥ 열의 개수 이기 때문에, R 연산이 적용된다.
         A = R(A)
         A = add_0(A)
-        minute += 1
+        #minute += 1
         first = True
         print(A, 'R연산 수행후')
         continue
@@ -86,12 +86,13 @@ while True:
     # R연산인지, C연산인지 판별한다.
     if len(A) >= len(A[0]): # R 연산
         A = R(A)
-        A = add_0(A)
+        #A = add_0(A)
         minute += 1
         print(A, 'R연산 수행후')
     else: # C 연산
         #여기에 c연산 구현 -> 여기가 잘못됐다. -> 계속해서 손보는중
         max_temp_length = 0
+        status = False
         for yul in range(len(A[0])): # 세로 한 줄
             
             tmp = []
@@ -110,27 +111,29 @@ while True:
             for tw in arr2:
                 temp.append(tw[0])
                 temp.append(tw[1])
-            print(temp,'temp')
+            #print(temp,'temp')
             if len(temp) > max_temp_length:
                 max_temp_length = len(temp)
             #print(max_temp_length) #6
 
-            '''여기서 잘못됨. 3행까지밖에-------------------------'''
-            new = [[0]*len(A[0]) for _ in range(max_temp_length)]
-            #print(new)
+
+            if status == False:
+                new = [[0]*len(A[0]) for _ in range(max_temp_length)] #계속 초기화되면 다 0으로 셋팅되니까 1번만 실행시키도록 하기
+                status = True
+
             for o in range(max_temp_length): # 0~5
-                if o <= len(temp)-1  #temp가 존재하는 곳까지만 바꿔주기
+                if o <= len(temp)-1:
                     new[o][yul] = temp[o]
 
-            A = deepcopy(new)
-            print(A,'A의 모습 확인해보자')
 
+        # 모든 열 실행후 도출된 결과 new 이차원배열 
+        A = deepcopy(new)
+        print(A,'A의 모습 확인해보자')
 
-    
                 
         #A = add_0(A)
         minute += 1
-        print(A,'C연산 수행후')
+        #print(A,'C연산 수행후')
 
         
 
