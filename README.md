@@ -6,7 +6,21 @@
 
 ㄴ<값 수정의 경우> 리스트(mutable한 자료형이라)값 수정은 가능하며 문자열(immutable해서)의 경우는 이런 식으로 값 변경불가
 
+[거꾸로 s.reverse() / reversed(s) / s[::-1] ](https://itholic.github.io/python-reverse-string/)
+
+​    
+
 [리스트 복사 - 깊은복사, 얕은복사](https://hcr3066.tistory.com/74)
 
-[거꾸로 s.reverse() / reversed(s) / s[::-1] ](https://itholic.github.io/python-reverse-string/)
+1. list()를 이용해 복사한다.
+
+2. 2차원 이상의 다차원 리스트는 리스트를 완전히 복사하려면 copy 메서드 대신 copy 모듈의 deepcopy 함수를 사용해야 한다. (이는 파이썬 문법 폴더에 설명)
+
+   ```python
+   from copy import deepcopy
+   a= [[1,2],[3]]
+   b= deepcopy(a)
+   ```
+
+​    
 
