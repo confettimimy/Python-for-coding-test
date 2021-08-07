@@ -12,6 +12,6 @@ SELECT ANIMAL_ID, NAME, DATE_FORMAT(DATETIME, '%Y-%m-%d') AS 날짜
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID
 
-# DATE_FORMAT을 이용해 원하는 데이트포맷을 출력시킨다.
-# '%Y-%m-%d' 여기서 y, m, d 대소문자의 차이는 출력 결과도 변화시킨다.(주의)
-
+# DATE_FORMAT()을 이용해 원하는 데이트포맷을 출력시킨다.
+# '%Y-%m-%d' 여기서 y, m, d 대소문자의 차이는 출력 결과도 변화시킨다.(주의) (첫번째 풀이)
+# DATE_FORMAT(DATETIME, '%Y-%m-%d') -여기서 Y y M m D d로 했을때 출력되는 방식이 모두 다 다르다. 출력시켜가며 확인해보자. (두번째 풀이)

@@ -17,3 +17,14 @@ ORDER BY ANIMAL_ID
 
 
 # CASE/WHEN/THEN/(ELSE)/END AS '새 칼럼명' 
+
+
+
+
+<2번째 풀이>
+SELECT ANIMAL_ID, NAME, 
+CASE 
+WHEN SEX_UPON_INTAKE LIKE '%Neutered%' OR SEX_UPON_INTAKE LIKE '%Spayed%'   # :    <-이것을 쓰면 문법상 오류
+THEN 'O'
+ELSE 'X' END   AS 중성화
+FROM ANIMAL_INS;
