@@ -34,30 +34,7 @@ for case in per_list: #작은수부터 순서대로 조합 시작
             break # break하면 최종 for루프 바로 나와지는거 확인완료, 여기에 걸려있는 for문이 최종 for루프 밖에 없으니까 
             #@@@ 맨 처음 충족값 찾자마자 최종 for루프 break. 시간절약을 위해 중간과정은 다 빼고 맨앞부터 제일 첫번째, 맨뒤부터 제일 마지막꺼만 찾으면 됨.
 
-per_list = sorted(per_list, reverse=True)
-for case in per_list: #큰수부터 순서대로 조합 시작
-    status = False
-    
-    s = ''
-    for j in range(k):
-        if len(s)%2 != 0: #홀수이면 2<3과 같이 계산할 수 있는 형태
-            if eval(s) == False:
-                status = True # 해당 케이스는 시간낭비 하지 말고 바로 패스
-                break # 해당 케이스는 시간낭비 하지 말고 바로 패스
-        s += str(case[j])
-        s += a[j]
-    s += str(case[-1])
 
-    if status == False:
-
-        if eval(s) == True:
-            result = ''
-            for c in s:
-                if c.isdigit():
-                    result += c
-            actual_max = result
-            break
-            #@@@ 맨 처음 충족값 찾자마자 최종 for루프 break.
         
 
 print(actual_max)
