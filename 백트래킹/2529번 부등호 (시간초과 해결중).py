@@ -7,8 +7,9 @@ a = sys.stdin.readline().split()
 num_list = [i for i in range(0, 10)]
 
 
-actual_min=0
-actual_max=0
+actual_min = '' # 실질 최소값
+actual_max = 0 # 실질 최대값
+first = False
 per_list = list(permutations(num_list, k+1))
 for case in per_list: #작은수부터 순서대로 조합 시작
     status = False
@@ -30,12 +31,13 @@ for case in per_list: #작은수부터 순서대로 조합 시작
             for c in s:
                 if c.isdigit():
                     result += c
-            actual_min = result
-            break # break하면 최종 for루프 바로 나와지는거 확인완료, 여기에 걸려있는 for문이 최종 for루프 밖에 없으니까 
-            #@@@ 맨 처음 충족값 찾자마자 최종 for루프 break. 시간절약을 위해 중간과정은 다 빼고 맨앞부터 제일 첫번째, 맨뒤부터 제일 마지막꺼만 찾으면 됨.
+            if first==False:
+                actual_min = result
+                first = True
+            if actual_max < int(result): #기존보다 큰 값 생길때마다 계속 업데이트시켜주기
+                actual_max = int(result)
 
 
-        
 
 print(actual_max)
 print(actual_min)
@@ -43,6 +45,13 @@ print(actual_min)
 
 
 '''시간초과 해결하기
-+) min값과 max값을 구할 때는 >>어차피 순차적으로 조합을 구하기 때문에<< min값은 맨처음 통과한 값으로, max_value는 계속 값을 넣어주면서 구하면 쉽게 구할 수 있다!
+[접근1]  min값과 max값을 구할 때는 >>어차피 순차적으로 조합을 구하기 때문에<< min값은 맨처음 통과한 값으로, max_value는 계속 값을 넣어주면서 구하면 쉽게 구할 수 있다!
+         => 이 방식을 이용해 코드를 고쳤더니 여전히 시간초과 문제가 발생한다.
+         => 파이썬 자체가 겁나 느려서 그런 것 같다. .  파이썬 쓰는 것이 갑자기 현타오기 시작했다.
+         
+[접근2]  permutations를 쓰면 부등호를 고려하지 않고 모든 경우를 다 구하므로 메모리 초과가 발생합니다.
+         부등호를 고려하여 (앞뒤 크기를 고려하여) 조합을 만들어야 합니다.
+         dfs방법으로 푸는 것을 추천합니다.
+  
 '''
 
