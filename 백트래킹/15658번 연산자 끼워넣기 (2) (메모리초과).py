@@ -30,6 +30,8 @@ for o in range(len(oper)):
 
 # 주어진 연산자를 모두 사용하지 않고 모든 수의 사이에 연산자를 끼워넣을 수도 있다.
 possible = set()
+#maxx = 0
+#minn = 0
 for case in list(set(list(permutations(oper, len(a)-1 )))): # set을 이용한 중복제거를 통해 시간초과 문제 해결(동일한 요소가 있기 때문에 중복이 발생할 수 밖에 없다)
     #print(case)
     s = ''
@@ -47,8 +49,14 @@ for case in list(set(list(permutations(oper, len(a)-1 )))): # set을 이용한 �
     
 
     possible.add(int(s))
+    '''if maxx < int(s):
+        maxx = int(s)
+    if minn > int(s):
+        minn = int(s)'''
 
 
+#print(maxx)
+#print(minn)
 possible = list(possible)
 print(max(possible))
 print(min(possible))
