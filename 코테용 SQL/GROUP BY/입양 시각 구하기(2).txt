@@ -28,6 +28,20 @@ HOUR	COUNT
 
 
 
+SET @hour := -1; -- 변수 선언
+SELECT (@hour := @hour+1) as HOUR, 
+(SELECT COUNT(*) FROM ANIMAL_OUTS WHERE HOUR(DATETIME) = @hour) AS COUNT
+FROM ANIMAL_OUTS
+WHERE @hour < 23
+
 
 
 # 0~23시 모든 시간에서, 해당 시간에 입양된 기록이 없어도(NULL이어도) COUNT 값을 0으로 출력하는 것이 관건인 문제.
+
+*  SET 옆에 변수명과 초기값을 설정할 수 있다.
+    - @가 붙은 변수는 프로시저가 종료되어도 유지된다고 생각하면 된다.
+    - 이를 통해 값을 누적하여 0부터 23까지 표현할 수 있다.
+
+*  := 이는 <<비교 연산자 =>>와 혼동을 피하기 위한 <<대입 연산>> 이다.
+
+*  SELECT (@hour := @hour+1)은 @hour의 값에 1씩 증가시키면서 SELECT문 전체를 실행하게 된다.
